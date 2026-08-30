@@ -1,0 +1,553 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <style>
+    html, body { margin: 0; background: #12100E; }
+    body { font-family: 'Archivo', system-ui, 'Helvetica Neue', Arial, sans-serif; color: #F2EEE7; -webkit-font-smoothing: antialiased; }
+    * { box-sizing: border-box; }
+    a { color: #F26B1D; text-decoration: none; }
+    a:hover { color: #FF8A45; }
+    p { text-wrap: pretty; }
+    h1, h2, h3 { margin: 0; text-wrap: balance; }
+    .btn { transition: filter .18s ease, border-color .18s ease, color .18s ease; }
+    .btn-primary:hover { filter: brightness(1.09); }
+    .btn-ghost:hover { border-color: #7A6F62; color: #FFFFFF; }
+    .btn-ink:hover { filter: brightness(0.86); }
+    .navlink { transition: color .16s ease; }
+    .navlink:hover { color: #F2EEE7; }
+    .card { transition: transform .2s ease; }
+    .card:hover { transform: translateY(-3px); }
+    .tab { cursor: pointer; transition: background-color .16s ease, color .16s ease, border-color .16s ease; }
+    .more { transition: gap .16s ease; }
+    .more:hover { gap: 12px; }
+  </style>
+</helmet>
+
+<div style="width: 1440px; background: #12100E; overflow: hidden;">
+
+  <!-- ============ NAV ============ -->
+  <header style="display: flex; align-items: center; justify-content: space-between; gap: 40px; height: 84px; padding: 0 100px; border-bottom: 1px solid #241F1A;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+        <path d="M13 2.5 L23 8 L13 13.5 L3 8 Z" stroke="{{accent}}" stroke-width="1.6" stroke-linejoin="round"></path>
+        <path d="M3 13 L13 18.5 L23 13" stroke="#8E857A" stroke-width="1.6" stroke-linejoin="round"></path>
+        <path d="M3 18 L13 23.5 L23 18" stroke="#4A423A" stroke-width="1.6" stroke-linejoin="round"></path>
+      </svg>
+      <span style="font-size: 21px; font-weight: 800; letter-spacing: -0.02em; font-stretch: 108%; color: #F2EEE7;">[CÉGNÉV]</span>
+    </div>
+    <nav style="display: flex; align-items: center; gap: 34px;">
+      <a class="navlink" href="#" style="font-size: 15px; font-weight: 500; color: #A39B90;">Szolgáltatások</a>
+      <a class="navlink" href="#" style="font-size: 15px; font-weight: 500; color: #A39B90;">Technológiák</a>
+      <a class="navlink" href="#" style="font-size: 15px; font-weight: 500; color: #A39B90;">Folyamat</a>
+      <a class="navlink" href="#" style="font-size: 15px; font-weight: 500; color: #A39B90;">Referenciák</a>
+      <a class="navlink" href="#" style="font-size: 15px; font-weight: 500; color: #A39B90;">Kapcsolat</a>
+    </nav>
+    <a class="btn btn-primary" href="#" style="display: inline-flex; align-items: center; height: 46px; padding: 0 22px; background: {{accent}}; color: #12100E; font-size: 15px; font-weight: 700; letter-spacing: -0.01em; border-radius: 2px;">Ajánlatkérés</a>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section style="padding: 96px 100px 104px 100px; border-bottom: 1px solid #241F1A;">
+    <div style="display: grid; grid-template-columns: 560px 600px; gap: 80px; align-items: center;">
+
+      <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 26px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="display: block; width: 26px; height: 1px; background: {{accent}};"></span>
+          <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: {{accent}};">Ipari 3D nyomtatás</span>
+        </div>
+
+        <h1 style="font-size: 62px; line-height: 1.03; font-weight: 800; letter-spacing: -0.035em; font-stretch: 106%; color: #F8F5EF;">Prototípusból kész alkatrész, hetek helyett napok alatt.</h1>
+
+        <p style="margin: 0; max-width: 500px; font-size: 18px; line-height: 1.62; color: #A8A096;">Feltöltöd a 3D modellt, mi átnézzük a nyomtathatóságát, legyártjuk és utómunkázzuk. FDM, SLA és SLS egy kézből — az egyedi daraboktól a kissorozatig.</p>
+
+        <div style="display: flex; align-items: center; gap: 14px; margin-top: 6px;">
+          <a class="btn btn-primary" href="#" style="display: inline-flex; align-items: center; height: 56px; padding: 0 30px; background: {{accent}}; color: #12100E; font-size: 17px; font-weight: 700; letter-spacing: -0.01em; border-radius: 2px;">Ajánlatkérés</a>
+          <a class="btn btn-ghost" href="#" style="display: inline-flex; align-items: center; height: 56px; padding: 0 26px; border: 1px solid #3A342C; color: #D8D2C8; font-size: 17px; font-weight: 600; border-radius: 2px;">Technológiák</a>
+        </div>
+
+        <p style="margin: 8px 0 0 0; font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 13px; line-height: 1.6; letter-spacing: 0.02em; color: #6F6659;">Fogadott fájlformátumok: STL · STEP · 3MF · OBJ</p>
+      </div>
+
+      <div style="position: relative; height: 560px; background: #17140F; border: 1px solid #241F1A; border-radius: 3px; background-image: linear-gradient(#1E1A15 1px, transparent 1px), linear-gradient(90deg, #1E1A15 1px, transparent 1px); background-size: 40px 40px;">
+        <svg viewBox="0 0 600 560" width="600" height="558" fill="none" aria-hidden="true">
+          <!-- tárgyasztal -->
+          <path d="M300 210 L560 345 L300 480 L40 345 Z" fill="#141109" stroke="#2C2721" stroke-width="1"></path>
+          <path d="M300 246 L490 345 L300 444 L110 345 Z" stroke="#221E18" stroke-width="1"></path>
+          <!-- kinyomtatott test -->
+          <path d="M300 146 L470 241 L470 345 L300 440 L130 345 L130 241 Z" fill="#1C1813"></path>
+          <path d="M300 146 L470 241 L300 336 L130 241 Z" fill="#232019"></path>
+          <!-- rétegvonalak: bal oldal -->
+          <g stroke="{{accentSoft}}" stroke-width="1">
+            <path d="M130 251 L300 346"></path><path d="M130 261 L300 356"></path><path d="M130 271 L300 366"></path>
+            <path d="M130 281 L300 376"></path><path d="M130 291 L300 386"></path><path d="M130 301 L300 396"></path>
+            <path d="M130 311 L300 406"></path><path d="M130 321 L300 416"></path><path d="M130 331 L300 426"></path>
+            <path d="M130 341 L300 436"></path>
+          </g>
+          <!-- rétegvonalak: jobb oldal -->
+          <g stroke="{{accentSoft}}" stroke-width="1">
+            <path d="M300 346 L470 251"></path><path d="M300 356 L470 261"></path><path d="M300 366 L470 271"></path>
+            <path d="M300 376 L470 281"></path><path d="M300 386 L470 291"></path><path d="M300 396 L470 301"></path>
+            <path d="M300 406 L470 311"></path><path d="M300 416 L470 321"></path><path d="M300 426 L470 331"></path>
+            <path d="M300 436 L470 341"></path>
+          </g>
+          <!-- friss réteg -->
+          <path d="M300 146 L470 241 L300 336 L130 241 Z" stroke="{{accent}}" stroke-width="2" stroke-linejoin="round"></path>
+          <path d="M300 146 L470 241 L470 345 L300 440 L130 345 L130 241 Z" stroke="{{accentLine}}" stroke-width="1.4" stroke-linejoin="round"></path>
+          <!-- még nem nyomtatott rész -->
+          <g stroke="#4B443B" stroke-width="1.4" stroke-dasharray="5 5" stroke-linejoin="round">
+            <path d="M300 60 L470 155 L300 250 L130 155 Z"></path>
+            <path d="M130 155 L130 241"></path><path d="M470 155 L470 241"></path><path d="M300 250 L300 336"></path>
+          </g>
+          <!-- fej -->
+          <path d="M352 108 L368 108 L368 178 L363 190 L357 190 L352 178 Z" fill="#12100E" stroke="#6E6558" stroke-width="1.4" stroke-linejoin="round"></path>
+          <path d="M360 190 L360 214" stroke="{{accent}}" stroke-width="2"></path>
+          <circle cx="360" cy="216" r="3.4" fill="{{accent}}"></circle>
+          <!-- Z tengely -->
+          <path d="M74 168 L74 300" stroke="#3A342C" stroke-width="1"></path>
+          <path d="M70 172 L74 164 L78 172" stroke="#3A342C" stroke-width="1" stroke-linejoin="round"></path>
+          <path d="M70 296 L74 304 L78 296" stroke="#3A342C" stroke-width="1" stroke-linejoin="round"></path>
+          <text x="86" y="238" font-family="'IBM Plex Mono', monospace" font-size="12" letter-spacing="1.4" fill="#6F6659">Z</text>
+          <!-- feliratok -->
+          <path d="M488 300 L524 300" stroke="#3A342C" stroke-width="1"></path>
+          <text x="446" y="290" font-family="'IBM Plex Mono', monospace" font-size="11.5" letter-spacing="0.08em" fill="#6F6659" text-anchor="start">rétegről rétegre</text>
+          <text x="300" y="510" font-family="'IBM Plex Mono', monospace" font-size="11.5" letter-spacing="0.14em" fill="#5C544A" text-anchor="middle">TÁRGYASZTAL</text>
+        </svg>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ ÜGYFÉLLOGÓK ============ -->
+  <section style="display: flex; align-items: center; gap: 48px; padding: 34px 100px; border-bottom: 1px solid #241F1A;">
+    <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #6F6659; white-space: nowrap;">Velünk gyártanak</span>
+    <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; flex-grow: 1;">
+      <div style="display: flex; align-items: center; justify-content: center; height: 52px; border: 1px dashed #3A342C; border-radius: 2px; font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; color: #5C544A;">[LOGÓ]</div>
+      <div style="display: flex; align-items: center; justify-content: center; height: 52px; border: 1px dashed #3A342C; border-radius: 2px; font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; color: #5C544A;">[LOGÓ]</div>
+      <div style="display: flex; align-items: center; justify-content: center; height: 52px; border: 1px dashed #3A342C; border-radius: 2px; font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; color: #5C544A;">[LOGÓ]</div>
+      <div style="display: flex; align-items: center; justify-content: center; height: 52px; border: 1px dashed #3A342C; border-radius: 2px; font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; color: #5C544A;">[LOGÓ]</div>
+      <div style="display: flex; align-items: center; justify-content: center; height: 52px; border: 1px dashed #3A342C; border-radius: 2px; font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; color: #5C544A;">[LOGÓ]</div>
+    </div>
+  </section>
+
+  <!-- ============ SZOLGÁLTATÁSOK ============ -->
+  <section style="padding: 112px 100px 118px 100px; background: #F3EFE8; color: #17140F;">
+    <div style="display: grid; grid-template-columns: 560px 1fr; gap: 80px; align-items: end; margin-bottom: 64px;">
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="display: block; width: 26px; height: 1px; background: #17140F;"></span>
+          <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #6B635A;">Szolgáltatások</span>
+        </div>
+        <h2 style="font-size: 46px; line-height: 1.08; font-weight: 800; letter-spacing: -0.03em; font-stretch: 106%; color: #17140F;">Három dolgot csinálunk, azt viszont végig.</h2>
+      </div>
+      <p style="margin: 0 0 6px 0; max-width: 460px; font-size: 17px; line-height: 1.65; color: #5F584F;">A fájl beérkezésétől a csomagolásig ugyanaz a csapat viszi a projektet. Nem kell külön tervezőt, nyomtatót és utómunkást keresned hozzá.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
+
+      <div class="card" style="display: flex; flex-direction: column; gap: 20px; padding: 36px 32px 34px 32px; background: #FFFCF6; border: 1px solid #DFD8CB; border-top: 3px solid {{accent}}; border-radius: 2px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2.6 L20.8 7.3 V16.7 L12 21.4 L3.2 16.7 V7.3 Z" stroke="#17140F" stroke-width="1.5" stroke-linejoin="round"></path>
+            <path d="M3.2 7.3 L12 12 L20.8 7.3" stroke="#17140F" stroke-width="1.5" stroke-linejoin="round"></path>
+            <path d="M12 12 V21.4" stroke="#17140F" stroke-width="1.5"></path>
+          </svg>
+          <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; color: #A79E92;">01</span>
+        </div>
+        <h3 style="font-size: 24px; line-height: 1.18; font-weight: 700; letter-spacing: -0.02em; color: #17140F;">Prototípusgyártás</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #5F584F;">Fogd a kezedbe a következő tervezési kör előtt. Egy hibás illesztés a nyomtatott darabon egy délután, a szerszámban egy hónap.</p>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 2px;">
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 15px; color: #3D372F;"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.4 L5.4 10.3 L11.5 3.6" stroke="{{accent}}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Formaterv- és illesztésvizsgálat</div>
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 15px; color: #3D372F;"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.4 L5.4 10.3 L11.5 3.6" stroke="{{accent}}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Funkcionális teszt- és tűrésdarabok</div>
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 15px; color: #3D372F;"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.4 L5.4 10.3 L11.5 3.6" stroke="{{accent}}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Bemutató- és vásári modellek</div>
+        </div>
+        <a class="more" href="#" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 6px; font-size: 15px; font-weight: 600; color: {{accent}};">Bővebben<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      </div>
+
+      <div class="card" style="display: flex; flex-direction: column; gap: 20px; padding: 36px 32px 34px 32px; background: #FFFCF6; border: 1px solid #DFD8CB; border-top: 3px solid #17140F; border-radius: 2px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2.6 L21 7.3 L12 12 L3 7.3 Z" stroke="#17140F" stroke-width="1.5" stroke-linejoin="round"></path>
+            <path d="M3 12 L12 16.7 L21 12" stroke="#17140F" stroke-width="1.5" stroke-linejoin="round"></path>
+            <path d="M3 16.7 L12 21.4 L21 16.7" stroke="#17140F" stroke-width="1.5" stroke-linejoin="round"></path>
+          </svg>
+          <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; color: #A79E92;">02</span>
+        </div>
+        <h3 style="font-size: 24px; line-height: 1.18; font-weight: 700; letter-spacing: -0.02em; color: #17140F;">Kissorozat-gyártás</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #5F584F;">Szerszámköltség nélkül, egy darabtól felfelé. Akkor is éri meg, ha a termék jövőre még változik egyet.</p>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 2px;">
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 15px; color: #3D372F;"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.4 L5.4 10.3 L11.5 3.6" stroke="{{accent}}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Darabról darabra azonos utómunka</div>
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 15px; color: #3D372F;"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.4 L5.4 10.3 L11.5 3.6" stroke="{{accent}}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Ütemezett, részszállításos gyártás</div>
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 15px; color: #3D372F;"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.4 L5.4 10.3 L11.5 3.6" stroke="{{accent}}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Pótalkatrész és kifutó széria</div>
+        </div>
+        <a class="more" href="#" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 6px; font-size: 15px; font-weight: 600; color: {{accent}};">Bővebben<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      </div>
+
+      <div class="card" style="display: flex; flex-direction: column; gap: 20px; padding: 36px 32px 34px 32px; background: #FFFCF6; border: 1px solid #DFD8CB; border-top: 3px solid #17140F; border-radius: 2px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3 18.5 C 7 6.5, 17 6.5, 21 18.5" stroke="#17140F" stroke-width="1.5" stroke-linecap="round"></path>
+            <circle cx="3" cy="18.5" r="2.1" stroke="#17140F" stroke-width="1.5"></circle>
+            <circle cx="21" cy="18.5" r="2.1" stroke="#17140F" stroke-width="1.5"></circle>
+            <rect x="9.6" y="6.4" width="4.8" height="4.8" stroke="#17140F" stroke-width="1.5"></rect>
+          </svg>
+          <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; color: #A79E92;">03</span>
+        </div>
+        <h3 style="font-size: 24px; line-height: 1.18; font-weight: 700; letter-spacing: -0.02em; color: #17140F;">Tervezés és fájljavítás</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #5F584F;">Ha csak egy ötlet, egy törött alkatrész vagy egy nyomtathatatlan fájl van meg, ott kezdjük, ahol tartasz.</p>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 2px;">
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 15px; color: #3D372F;"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.4 L5.4 10.3 L11.5 3.6" stroke="{{accent}}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>CAD-modellezés vázlatból vagy méretről</div>
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 15px; color: #3D372F;"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.4 L5.4 10.3 L11.5 3.6" stroke="{{accent}}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Nyomtathatóság-ellenőrzés, falvastagítás</div>
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 15px; color: #3D372F;"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.4 L5.4 10.3 L11.5 3.6" stroke="{{accent}}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>3D szkennelés, reverse engineering</div>
+        </div>
+        <a class="more" href="#" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 6px; font-size: 15px; font-weight: 600; color: {{accent}};">Bővebben<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ TECHNOLÓGIÁK ============ -->
+  <section style="padding: 112px 100px 118px 100px; background: #12100E; border-bottom: 1px solid #241F1A;">
+    <div style="display: grid; grid-template-columns: 620px 1fr; gap: 80px; align-items: end; margin-bottom: 52px;">
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="display: block; width: 26px; height: 1px; background: {{accent}};"></span>
+          <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: {{accent}};">Technológiák</span>
+        </div>
+        <h2 style="font-size: 46px; line-height: 1.08; font-weight: 800; letter-spacing: -0.03em; font-stretch: 106%; color: #F8F5EF;">Nem egy géphez keresünk feladatot.</h2>
+      </div>
+      <p style="margin: 0 0 6px 0; max-width: 440px; font-size: 17px; line-height: 1.65; color: #A8A096;">Ugyanaz a geometria más eljárással más árat, felületet és szilárdságot jelent. Megmondjuk, melyik éri meg neked — akkor is, ha az a drágább.</p>
+    </div>
+
+    <div style="display: flex; gap: 10px; margin-bottom: 28px;">
+      <sc-for list="{{tabs}}" as="tab" hint-placeholder-count="3">
+        <div class="tab" onClick="{{tab.pick}}" style="display: flex; align-items: center; gap: 12px; height: 54px; padding: 0 26px; background: {{tab.bg}}; border: 1px solid {{tab.bd}}; border-radius: 2px; color: {{tab.fg}};">
+          <span style="font-size: 17px; font-weight: 700; letter-spacing: -0.01em;">{{tab.label}}</span>
+          <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.06em; color: {{tab.sub}};">{{tab.short}}</span>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 440px; gap: 0; border: 1px solid #241F1A; border-radius: 2px; background: #17140F;">
+
+      <div style="display: flex; flex-direction: column; gap: 26px; padding: 44px 48px 46px 48px; border-right: 1px solid #241F1A;">
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <h3 style="font-size: 30px; line-height: 1.15; font-weight: 700; letter-spacing: -0.025em; color: #F8F5EF;">{{tech.title}}</h3>
+          <p style="margin: 0; max-width: 560px; font-size: 17px; line-height: 1.62; color: #A8A096;">{{tech.desc}}</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #6F6659;">Anyagok</span>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <sc-for list="{{tech.materials}}" as="m" hint-placeholder-count="5">
+              <span style="display: inline-flex; align-items: center; height: 32px; padding: 0 14px; background: #1E1A15; border: 1px solid #2C2721; border-radius: 2px; font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 13px; color: #C8C1B6;">{{m}}</span>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #6F6659;">Erre a legjobb</span>
+          <div style="display: flex; flex-direction: column; gap: 11px;">
+            <sc-for list="{{tech.uses}}" as="u" hint-placeholder-count="3">
+              <div style="display: flex; align-items: flex-start; gap: 12px; font-size: 16px; line-height: 1.5; color: #D8D2C8;">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="margin-top: 4px; flex-shrink: 0;"><path d="M2.5 7.4 L5.4 10.3 L11.5 3.6" stroke="{{accent}}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                <span>{{u}}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 0; padding: 44px 44px 46px 44px; background: #141109;">
+        <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #6F6659; margin-bottom: 18px;">Paraméterek</span>
+        <sc-for list="{{tech.specs}}" as="s" hint-placeholder-count="4">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 16px 0; border-bottom: 1px solid #221E18;">
+            <span style="font-size: 15px; color: #8E857A;">{{s.k}}</span>
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 13px; letter-spacing: 0.01em; color: {{accent}}; background: {{accentTint}}; border: 1px dashed {{accentLine}}; border-radius: 3px; padding: 3px 8px; white-space: nowrap;">{{s.v}}</span>
+          </div>
+        </sc-for>
+        <p style="margin: 22px 0 0 0; font-size: 14px; line-height: 1.55; color: #6F6659;">A szögletes zárójeles értékeket a saját gépparkod adataira kell cserélni.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ FOLYAMAT ============ -->
+  <section style="padding: 112px 100px 118px 100px; background: #F3EFE8; color: #17140F;">
+    <div style="display: grid; grid-template-columns: 560px 1fr; gap: 80px; align-items: end; margin-bottom: 64px;">
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="display: block; width: 26px; height: 1px; background: #17140F;"></span>
+          <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #6B635A;">Folyamat</span>
+        </div>
+        <h2 style="font-size: 46px; line-height: 1.08; font-weight: 800; letter-spacing: -0.03em; font-stretch: 106%; color: #17140F;">Négy lépés a kész alkatrészig.</h2>
+      </div>
+      <p style="margin: 0 0 6px 0; max-width: 460px; font-size: 17px; line-height: 1.65; color: #5F584F;">Nincs bejelentkezés, nincs regisztráció, nincs konfigurátor, amivel neked kell megküzdened. Egy fájl és egy mondat elég az induláshoz.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px;">
+
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; color: {{accent}};">01</span>
+          <span style="display: block; height: 1px; flex-grow: 1; background: #D3CBBD;"></span>
+        </div>
+        <h3 style="font-size: 21px; line-height: 1.2; font-weight: 700; letter-spacing: -0.02em; color: #17140F;">Elküldöd a modellt</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #5F584F;">STL, STEP, 3MF vagy OBJ fájl, a darabszám és egy mondat arról, mire használod majd.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; color: {{accent}};">02</span>
+          <span style="display: block; height: 1px; flex-grow: 1; background: #D3CBBD;"></span>
+        </div>
+        <h3 style="font-size: 21px; line-height: 1.2; font-weight: 700; letter-spacing: -0.02em; color: #17140F;">Árat és technológiát javaslunk</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #5F584F;">Átnézzük a falvastagságokat és a kritikus méreteket, majd <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 0.88em; color: {{accent}}; background: {{accentTint}}; border: 1px dashed {{accentLine}}; border-radius: 3px; padding: 1px 6px; white-space: nowrap;">[1 munkanapon]</span> belül árazunk.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; color: {{accent}};">03</span>
+          <span style="display: block; height: 1px; flex-grow: 1; background: #D3CBBD;"></span>
+        </div>
+        <h3 style="font-size: 21px; line-height: 1.2; font-weight: 700; letter-spacing: -0.02em; color: #17140F;">Gyártás és utómunka</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #5F584F;">Nyomtatás, támaszeltávolítás, csiszolás vagy festés, végül méretellenőrzés a rajz szerint.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; color: {{accent}};">04</span>
+          <span style="display: block; height: 1px; flex-grow: 1; background: #D3CBBD;"></span>
+        </div>
+        <h3 style="font-size: 21px; line-height: 1.2; font-weight: 700; letter-spacing: -0.02em; color: #17140F;">Átvétel</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #5F584F;">Futárral bárhová az országban, vagy személyesen a műhelyben: <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 0.88em; color: {{accent}}; background: {{accentTint}}; border: 1px dashed {{accentLine}}; border-radius: 3px; padding: 1px 6px; white-space: nowrap;">[VÁROS, CÍM]</span></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ REFERENCIÁK ============ -->
+  <section style="padding: 112px 100px 118px 100px; background: #12100E; border-bottom: 1px solid #241F1A;">
+    <div style="display: grid; grid-template-columns: 1fr 400px; gap: 100px; align-items: start;">
+
+      <div style="display: flex; flex-direction: column; gap: 30px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="display: block; width: 26px; height: 1px; background: {{accent}};"></span>
+          <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: {{accent}};">Referenciák</span>
+        </div>
+        <blockquote style="margin: 0; font-size: 32px; line-height: 1.34; font-weight: 500; letter-spacing: -0.02em; color: #F0ECE4;">„<span style="color: #8E857A;">[Ide kerül egy valódi ügyfél két mondatos visszajelzése. A legjobb idézet konkrét: mennyi időt vagy pénzt spórolt, és min múlt.]</span>”</blockquote>
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <div style="width: 44px; height: 44px; border: 1px dashed #3A342C; border-radius: 50%;"></div>
+          <div style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 16px; font-weight: 600; color: #D8D2C8;">[NÉV]</span>
+            <span style="font-size: 14px; color: #6F6659;">[POZÍCIÓ] · [CÉG]</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; border-top: 1px solid #241F1A;">
+        <div style="display: flex; flex-direction: column; gap: 6px; padding: 26px 0; border-bottom: 1px solid #241F1A;">
+          <span style="font-size: 38px; font-weight: 800; letter-spacing: -0.03em; color: {{accent}};">[000]+</span>
+          <span style="font-size: 15px; color: #8E857A;">legyártott alkatrész</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px; padding: 26px 0; border-bottom: 1px solid #241F1A;">
+          <span style="font-size: 38px; font-weight: 800; letter-spacing: -0.03em; color: {{accent}};">[0] nap</span>
+          <span style="font-size: 15px; color: #8E857A;">átlagos átfutási idő</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px; padding: 26px 0; border-bottom: 1px solid #241F1A;">
+          <span style="font-size: 38px; font-weight: 800; letter-spacing: -0.03em; color: {{accent}};">[00]%</span>
+          <span style="font-size: 15px; color: #8E857A;">határidőre leszállítva</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ ZÁRÓ CTA ============ -->
+  <section style="padding: 100px 100px 100px 100px; background: #12100E;">
+    <div style="display: grid; grid-template-columns: 1fr 420px; gap: 80px; align-items: center; padding: 64px 64px 66px 64px; background: {{accent}}; border-radius: 3px;">
+      <div style="display: flex; flex-direction: column; gap: 22px;">
+        <h2 style="font-size: 44px; line-height: 1.08; font-weight: 800; letter-spacing: -0.032em; font-stretch: 106%; color: #17140F;">Küldd át a modellt, és mondunk rá árat.</h2>
+        <p style="margin: 0; max-width: 520px; font-size: 18px; line-height: 1.6; color: #46352A;">Írd meg, mire kell az alkatrész és hány darab kell belőle. Ha még nincs kész fájlod, azt is megbeszéljük — a tervezés nálunk is elfér.</p>
+        <div style="display: flex; align-items: center; gap: 28px; margin-top: 6px;">
+          <a class="btn btn-ink" href="#" style="display: inline-flex; align-items: center; height: 56px; padding: 0 30px; background: #17140F; color: #F8F5EF; font-size: 17px; font-weight: 700; letter-spacing: -0.01em; border-radius: 2px;">Ajánlatkérés</a>
+          <div style="display: flex; flex-direction: column; gap: 4px; font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 14px; color: #46352A;">
+            <span>[ajanlat@cegnev.hu]</span>
+            <span>[+36 00 000 0000]</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; height: 236px; border: 2px dashed rgba(23, 20, 15, 0.42); border-radius: 3px; background: rgba(255, 252, 246, 0.14);">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 16.5 V4.5 M7.5 9 L12 4.5 L16.5 9" stroke="#17140F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M3.8 15 V18.6 C3.8 19.4 4.4 20 5.2 20 H18.8 C19.6 20 20.2 19.4 20.2 18.6 V15" stroke="#17140F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <span style="font-size: 17px; font-weight: 700; letter-spacing: -0.01em; color: #17140F;">Húzd ide a 3D fájlt</span>
+        <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 13px; color: #46352A;">STL · STEP · 3MF · OBJ</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LÁBLÉC ============ -->
+  <footer style="padding: 0 100px 44px 100px; background: #12100E;">
+    <div style="display: grid; grid-template-columns: 380px repeat(3, minmax(0, 1fr)); gap: 60px; padding: 64px 0 56px 0; border-top: 1px solid #241F1A;">
+
+      <div style="display: flex; flex-direction: column; gap: 18px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <svg width="24" height="24" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+            <path d="M13 2.5 L23 8 L13 13.5 L3 8 Z" stroke="{{accent}}" stroke-width="1.6" stroke-linejoin="round"></path>
+            <path d="M3 13 L13 18.5 L23 13" stroke="#8E857A" stroke-width="1.6" stroke-linejoin="round"></path>
+            <path d="M3 18 L13 23.5 L23 18" stroke="#4A423A" stroke-width="1.6" stroke-linejoin="round"></path>
+          </svg>
+          <span style="font-size: 19px; font-weight: 800; letter-spacing: -0.02em; color: #F2EEE7;">[CÉGNÉV]</span>
+        </div>
+        <p style="margin: 0; max-width: 300px; font-size: 15px; line-height: 1.6; color: #6F6659;">Ipari 3D nyomtatás, prototípus- és kissorozatgyártás egy műhelyből.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #5C544A;">Szolgáltatások</span>
+        <a class="navlink" href="#" style="font-size: 15px; color: #A39B90;">Prototípusgyártás</a>
+        <a class="navlink" href="#" style="font-size: 15px; color: #A39B90;">Kissorozat-gyártás</a>
+        <a class="navlink" href="#" style="font-size: 15px; color: #A39B90;">Tervezés és fájljavítás</a>
+        <a class="navlink" href="#" style="font-size: 15px; color: #A39B90;">3D szkennelés</a>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #5C544A;">Technológiák</span>
+        <a class="navlink" href="#" style="font-size: 15px; color: #A39B90;">FDM</a>
+        <a class="navlink" href="#" style="font-size: 15px; color: #A39B90;">SLA</a>
+        <a class="navlink" href="#" style="font-size: 15px; color: #A39B90;">SLS</a>
+        <a class="navlink" href="#" style="font-size: 15px; color: #A39B90;">Anyagválaszték</a>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #5C544A;">Kapcsolat</span>
+        <span style="font-size: 15px; color: #A39B90;">[ajanlat@cegnev.hu]</span>
+        <span style="font-size: 15px; color: #A39B90;">[+36 00 000 0000]</span>
+        <span style="font-size: 15px; line-height: 1.5; color: #A39B90;">[0000 Város, Utca 00.]</span>
+        <span style="font-size: 15px; color: #A39B90;">H–P [08:00–16:00]</span>
+      </div>
+
+    </div>
+
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 30px; padding-top: 26px; border-top: 1px solid #1D1914;">
+      <span style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 13px; color: #5C544A;">© 2026 [CÉGNÉV] Kft.</span>
+      <div style="display: flex; align-items: center; gap: 26px;">
+        <a class="navlink" href="#" style="font-size: 13px; color: #5C544A;">Adatkezelési tájékoztató</a>
+        <a class="navlink" href="#" style="font-size: 13px; color: #5C544A;">ÁSZF</a>
+        <a class="navlink" href="#" style="font-size: 13px; color: #5C544A;">Impresszum</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+
+<script data-dc-script data-props='{"accent":{"editor":"color","default":"#F26B1D","options":["#F26B1D","#00A45E","#4A8BEF","#EC5B9E"],"section":"Téma"},"$preview":{"width":1440,"height":5400}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { tech: 'fdm' };
+  }
+
+  renderVals() {
+    var accent = this.props.accent || '#F26B1D';
+
+    function rgba(hex, alpha) {
+      var h = String(hex).replace('#', '');
+      if (h.length === 3) { h = h[0] + h[0] + h[1] + h[1] + h[2] + h[2]; }
+      var r = parseInt(h.substring(0, 2), 16);
+      var g = parseInt(h.substring(2, 4), 16);
+      var b = parseInt(h.substring(4, 6), 16);
+      if (isNaN(r) || isNaN(g) || isNaN(b)) { r = 242; g = 107; b = 29; }
+      return 'rgba(' + r + ', ' + g + ', ' + b + ', ' + alpha + ')';
+    }
+
+    var TECHS = [
+      {
+        id: 'fdm',
+        label: 'FDM',
+        short: 'szálhúzás',
+        title: 'Ömledékes szálhúzás',
+        desc: 'A legkedvezőbb ár-érték arány robusztus, funkcionális darabokra. Nagy méretben is gazdaságos, és a legszélesebb műszaki anyagválaszték ehhez tartozik.',
+        materials: ['PLA', 'PETG', 'ABS', 'ASA', 'PA-CF', 'TPU'],
+        uses: ['Burkolatok, tokozás, gépészeti konzolok', 'Gyártásközi készülékek és befogók', 'Nagy méretű, egy darabban kért alkatrészek'],
+        specs: [
+          { k: 'Építőtér', v: '[000 × 000 × 000 mm]' },
+          { k: 'Rétegvastagság', v: '[0,00–0,00 mm]' },
+          { k: 'Jellemző tűrés', v: '[± 0,00 mm]' },
+          { k: 'Átfutás', v: '[0–0 munkanap]' }
+        ]
+      },
+      {
+        id: 'sla',
+        label: 'SLA',
+        short: 'gyanta',
+        title: 'Fotopolimer gyantanyomtatás',
+        desc: 'Sima felület és éles élek ott, ahol a részlet számít. A rétegek gyakorlatilag láthatatlanok, cserébe az anyagok kevésbé bírják a tartós terhelést és az UV-t.',
+        materials: ['Standard', 'Tough', 'Öntőgyanta', 'Rugalmas', 'Nagy hőállóságú'],
+        uses: ['Bemutató- és formatervi modellek', 'Öntőminták, ékszer és fogtechnika', 'Apró, finom részletű mechanikák'],
+        specs: [
+          { k: 'Építőtér', v: '[000 × 000 × 000 mm]' },
+          { k: 'Rétegvastagság', v: '[0,00–0,00 mm]' },
+          { k: 'Jellemző tűrés', v: '[± 0,00 mm]' },
+          { k: 'Átfutás', v: '[0–0 munkanap]' }
+        ]
+      },
+      {
+        id: 'sls',
+        label: 'SLS',
+        short: 'porágy',
+        title: 'Poralapú lézerszinterezés',
+        desc: 'Támaszanyag nélkül épül, így a geometria szinte szabad: mozgó mechanizmus egy darabban is kinyomtatható. Minden irányban egyenletes szilárdság, sorozatérett darabok.',
+        materials: ['PA12', 'PA11', 'PA12-GB', 'TPU', 'PA-CF'],
+        uses: ['Végfelhasználói alkatrészek és kissorozat', 'Csuklók, zsanérok, egy darabban mozgó szerkezetek', 'Terhelt, minden irányban igénybevett darabok'],
+        specs: [
+          { k: 'Építőtér', v: '[000 × 000 × 000 mm]' },
+          { k: 'Rétegvastagság', v: '[0,00–0,00 mm]' },
+          { k: 'Jellemző tűrés', v: '[± 0,00 mm]' },
+          { k: 'Átfutás', v: '[0–0 munkanap]' }
+        ]
+      }
+    ];
+
+    var current = this.state && this.state.tech ? this.state.tech : 'fdm';
+    var active = TECHS[0];
+    for (var i = 0; i < TECHS.length; i++) {
+      if (TECHS[i].id === current) { active = TECHS[i]; }
+    }
+
+    var self = this;
+    var tabs = TECHS.map(function (t) {
+      var on = t.id === active.id;
+      return {
+        id: t.id,
+        label: t.label,
+        short: t.short,
+        bg: on ? accent : '#17140F',
+        bd: on ? accent : '#2C2721',
+        fg: on ? '#12100E' : '#C8C1B6',
+        sub: on ? rgba('#12100E', 0.62) : '#6F6659',
+        pick: function () { self.setState({ tech: t.id }); }
+      };
+    });
+
+    return {
+      accent: accent,
+      accentTint: rgba(accent, 0.1),
+      accentLine: rgba(accent, 0.42),
+      accentSoft: rgba(accent, 0.3),
+      tabs: tabs,
+      tech: active
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <style>
+    html, body { margin: 0; background: #FFFFFF; }
+    body { font-family: 'Space Grotesk', system-ui, 'Helvetica Neue', Arial, sans-serif; color: #0A0A0B; }
+    * { box-sizing: border-box; }
+    a { color: #1B3BFF; } a:hover { color: #0022CC; }
+    p, h1, h2, h3 { margin: 0; }
+  </style>
+</helmet>
+
+<div style="width: 560px; height: 700px; background: #FFFFFF; display: flex; flex-direction: column;">
+
+  <div style="display: flex; flex-direction: column; gap: 6px; padding: 16px 24px; background: #0A0A0B; color: #FFFFFF;">
+    <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #1B3BFF;">B irány · vázlat</span>
+    <span style="font-size: 17px; font-weight: 700; letter-spacing: -0.02em;">Fehér labor</span>
+    <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; line-height: 1.5; color: #9A9AA2;">Mellette: a mérnök ügyfélnek a pontosság az érv — a rács, a sok szám és a hűvös kék bizalmat ad.<br>Ellene: könnyen elveszik a sok hasonló SaaS-oldal között, kevés a személyisége.</span>
+  </div>
+
+  <div style="flex-grow: 1; padding: 26px 24px 24px 24px; background-image: linear-gradient(#EFEFF2 1px, transparent 1px), linear-gradient(90deg, #EFEFF2 1px, transparent 1px); background-size: 28px 28px;">
+
+    <div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 14px; border-bottom: 1px solid #0A0A0B;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <div style="width: 14px; height: 14px; border: 1.5px solid #0A0A0B;"></div>
+        <div style="width: 74px; height: 9px; background: #0A0A0B;"></div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div style="width: 44px; height: 6px; background: #C7C7CE;"></div>
+        <div style="width: 44px; height: 6px; background: #C7C7CE;"></div>
+        <div style="width: 44px; height: 6px; background: #C7C7CE;"></div>
+        <div style="width: 60px; height: 24px; background: #1B3BFF;"></div>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 168px; gap: 22px; padding-top: 30px;">
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #1B3BFF;">/ 01 — additive manufacturing</span>
+        <h1 style="font-size: 34px; line-height: 1.04; font-weight: 700; letter-spacing: -0.035em;">Alkatrész,<br>tűrésre gyártva.</h1>
+        <div style="display: flex; flex-direction: column; gap: 7px; padding-top: 4px;">
+          <div style="width: 100%; height: 7px; background: #DDDDE3;"></div>
+          <div style="width: 88%; height: 7px; background: #DDDDE3;"></div>
+          <div style="width: 62%; height: 7px; background: #DDDDE3;"></div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; padding-top: 8px;">
+          <div style="width: 116px; height: 34px; background: #0A0A0B;"></div>
+          <div style="width: 96px; height: 34px; border: 1.5px solid #0A0A0B;"></div>
+        </div>
+      </div>
+
+      <div style="position: relative; height: 190px; border: 1.5px solid #0A0A0B; background: #FFFFFF;">
+        <svg viewBox="0 0 168 190" width="166" height="188" fill="none">
+          <path d="M84 46 L128 72 L128 118 L84 144 L40 118 L40 72 Z" stroke="#0A0A0B" stroke-width="1.6" stroke-linejoin="round"></path>
+          <path d="M40 72 L84 98 L128 72" stroke="#C7C7CE" stroke-width="1.2"></path>
+          <path d="M84 98 L84 144" stroke="#C7C7CE" stroke-width="1.2"></path>
+          <path d="M20 46 L20 144" stroke="#1B3BFF" stroke-width="1"></path>
+          <path d="M17 50 L20 44 L23 50" stroke="#1B3BFF" stroke-width="1"></path>
+          <path d="M17 140 L20 146 L23 140" stroke="#1B3BFF" stroke-width="1"></path>
+          <text x="8" y="168" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#1B3BFF">[00,0 mm]</text>
+          <circle cx="128" cy="72" r="3" fill="#1B3BFF"></circle>
+        </svg>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 30px;">
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 14px; border-top: 2px solid #0A0A0B;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #9A9AA2;">01</span>
+        <div style="width: 70%; height: 8px; background: #0A0A0B;"></div>
+        <div style="width: 100%; height: 6px; background: #DDDDE3;"></div>
+        <div style="width: 84%; height: 6px; background: #DDDDE3;"></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 14px; border-top: 2px solid #0A0A0B;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #9A9AA2;">02</span>
+        <div style="width: 70%; height: 8px; background: #0A0A0B;"></div>
+        <div style="width: 100%; height: 6px; background: #DDDDE3;"></div>
+        <div style="width: 84%; height: 6px; background: #DDDDE3;"></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 14px; border-top: 2px solid #1B3BFF;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #1B3BFF;">03</span>
+        <div style="width: 70%; height: 8px; background: #0A0A0B;"></div>
+        <div style="width: 100%; height: 6px; background: #DDDDE3;"></div>
+        <div style="width: 84%; height: 6px; background: #DDDDE3;"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

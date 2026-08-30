@@ -1,0 +1,25 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "title": "Landing page — asztali", "x": 0, "y": 0, "w": 1440, "h": 5400, "is_interactive": true },
+    { "file": "Mobile.dc.html", "title": "Landing page — mobil", "x": 1560, "y": 0, "w": 390, "h": 3200 },
+    { "file": "DirectionB.dc.html", "title": "B irány — Fehér labor", "x": 2070, "y": 0, "w": 560, "h": 700 },
+    { "file": "DirectionC.dc.html", "title": "C irány — Műhelyplakát", "x": 2070, "y": 820, "w": 560, "h": 700 }
+  ],
+  "annotations": [
+    {
+      "id": "helyorzok",
+      "x": -360,
+      "y": 0,
+      "w": 300,
+      "text": "A [szögletes zárójeles] részek helyőrzők: cégnév, elérhetőségek, gépparaméterek, számok, ügyféllogók és az idézet.\n\nEzeket valós adatra kell cserélni — szándékosan nem találtam ki helyetted egyiket sem."
+    },
+    {
+      "id": "iranyok",
+      "x": 2070,
+      "y": -190,
+      "w": 560,
+      "text": "Két alternatív irány, alacsony felbontású vázlatként. A kész oldal (A irány) a meleg grafit + borostyán vonalat viszi. Ha valamelyik ez alatt jobban tetszik, azt építem meg teljesen."
+    }
+  ],
+  "launch": { "view": "canvas" }
+}
