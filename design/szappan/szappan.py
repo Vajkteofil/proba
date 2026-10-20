@@ -7,8 +7,8 @@ Mértékegység: 1 Blender egység = 1 mm.
 import math
 import os
 
-import bmesh
 import bpy
+import bmesh  # a bpy importja után érhető el
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 
@@ -129,7 +129,7 @@ fm.use_nodes = True
 fm.node_tree.nodes["Principled BSDF"].inputs["Base Color"].default_value = (0.55, 0.6, 0.62, 1)
 floor.data.materials.append(fm)
 
-bpy.ops.object.camera_add(location=(150, -190, 170))
+bpy.ops.object.camera_add(location=(230, -300, 260))
 cam = bpy.context.object
 cam.data.lens = 70
 cam.data.clip_end = 5000
