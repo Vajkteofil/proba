@@ -44,9 +44,9 @@ marble = node(nt, "ShaderNodeTexNoise", (-700, 200), Scale=0.035, Detail=6.0, Ro
 nt.links.new(coord.outputs["Object"], marble.inputs["Vector"])
 ramp = node(nt, "ShaderNodeValToRGB", (-450, 200))
 ramp.color_ramp.elements[0].position = 0.35
-ramp.color_ramp.elements[0].color = (0.72, 0.36, 0.10, 1)   # karamell
+ramp.color_ramp.elements[0].color = (0.50, 0.17, 0.03, 1)   # karamell
 ramp.color_ramp.elements[1].position = 0.70
-ramp.color_ramp.elements[1].color = (0.95, 0.70, 0.36, 1)   # méz
+ramp.color_ramp.elements[1].color = (0.93, 0.52, 0.14, 1)   # méz
 nt.links.new(marble.outputs["Fac"], ramp.inputs["Fac"])
 
 # apró sötét pöttyök (zab / gyógynövény)
@@ -86,7 +86,6 @@ nt = steel.node_tree
 sb = nt.nodes["Principled BSDF"]
 sb.inputs["Base Color"].default_value = (0.86, 0.87, 0.88, 1)
 sb.inputs["Metallic"].default_value = 1.0
-sb.inputs["Anisotropic"].default_value = 0.7
 tc = node(nt, "ShaderNodeTexCoord", (-900, 0))
 mp = node(nt, "ShaderNodeMapping", (-700, 0))
 mp.inputs["Scale"].default_value = (0.02, 3.0, 1.0)          # x irányú csiszolási csíkok
@@ -94,14 +93,13 @@ nt.links.new(tc.outputs["Object"], mp.inputs["Vector"])
 brush = node(nt, "ShaderNodeTexNoise", (-500, 0), Scale=1.0, Detail=10.0)
 nt.links.new(mp.outputs["Vector"], brush.inputs["Vector"])
 rr = node(nt, "ShaderNodeMapRange", (-300, 0))
-rr.inputs["To Min"].default_value = 0.18
-rr.inputs["To Max"].default_value = 0.32
+rr.inputs["To Min"].default_value = 0.28
+rr.inputs["To Max"].default_value = 0.40
 nt.links.new(brush.outputs["Fac"], rr.inputs["Value"])
 nt.links.new(rr.outputs["Result"], sb.inputs["Roughness"])
-tan = node(nt, "ShaderNodeTangent", (-300, -250))
-tan.direction_type = 'RADIAL'
-tan.axis = 'X'
-nt.links.new(tan.outputs["Tangent"], sb.inputs["Tangent"])
+sbump = node(nt, "ShaderNodeBump", (-100, -250), Strength=0.08)
+nt.links.new(brush.outputs["Fac"], sbump.inputs["Height"])
+nt.links.new(sbump.outputs["Normal"], sb.inputs["Normal"])
 counter.data.materials.append(steel)
 
 # háttérfal (csempés műhelyfal hatás, életlenben)
@@ -128,12 +126,13 @@ def area(loc, energy, size, color=(1, 1, 1)):
 area((-250, -200, 350), 9e5, 300, (1.0, 0.95, 0.88))   # meleg fő fény
 area((300, -100, 150), 2.5e5, 250, (0.9, 0.95, 1.0))   # hideg derítő
 area((0, 300, 250), 3e5, 300)                          # hátsó kontúrfény
+area((0, 0, 700), 1.2e6, 900)                          # nagy felső softbox, ettől világos a pult
 
 world = bpy.data.worlds.new("Muhely")
 world.use_nodes = True
 bg = world.node_tree.nodes["Background"]
 bg.inputs["Color"].default_value = (0.85, 0.87, 0.9, 1)
-bg.inputs["Strength"].default_value = 0.6
+bg.inputs["Strength"].default_value = 1.4
 scene.world = world
 
 # --- Render beállítások: élénk, nem fakó ---
@@ -141,10 +140,10 @@ scene.render.engine = 'CYCLES'
 scene.cycles.device = 'CPU'
 scene.cycles.samples = 160
 scene.cycles.use_denoising = True
-scene.render.resolution_x, scene.render.resolution_y = 1600, 1100
+scene.render.resolution_x, scene.render.resolution_y = 2048, 1408
 scene.view_settings.view_transform = 'AgX'
 try:
-    scene.view_settings.look = 'AgX - Medium High Contrast'
+    scene.view_settings.look = 'AgX - Punchy'
 except TypeError:
     pass
 
