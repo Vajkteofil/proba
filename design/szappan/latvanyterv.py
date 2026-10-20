@@ -5,6 +5,7 @@ Kimenet: latvany_1_haromnegyed.png, latvany_2_felulnezet.png, latvany_3_furat_ko
 """
 import math
 import os
+import sys
 
 import bpy
 
@@ -156,7 +157,10 @@ VIEWS = [
 target = bpy.data.objects.new("Cel", None)
 scene.collection.objects.link(target)
 
+only = sys.argv[1:]  # opcionálisan csak a megadott nevű nézetek
 for name, loc, lens, aim, fstop in VIEWS:
+    if only and name not in only:
+        continue
     bpy.ops.object.camera_add(location=loc)
     cam = bpy.context.object
     cam.data.lens = lens
